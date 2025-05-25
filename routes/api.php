@@ -12,9 +12,3 @@ Route::delete('/reservations/{id}', [ReservationController::class, 'destroy']);
 Route::get('/courses', [CoursesController::class, 'index']);
 Route::post('/courses', [CoursesController::class, 'store']);
 Route::delete('/courses/{id}', [CoursesController::class, 'destroy']);
-
-
-Route::get('/run-migrations', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migrations executed successfully!';
-});
